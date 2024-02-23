@@ -108,3 +108,5 @@ ENV/
 *.env
 !example.env
 *.iml
+
+*.duckdb

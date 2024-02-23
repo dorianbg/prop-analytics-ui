@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "prop_analytics_ui"
+version = "0.1.0"
+description = ""
+authors = ["Dorian Beganovic"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 "
+streamlit = "^1.31.1"
+duckdb = "^0.10.0"
+
+[tool.poetry.group.dev.dependencies]
+watchdog = "^4.0.0"
+black = "^24.2.0"
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
