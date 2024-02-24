@@ -5,7 +5,7 @@ description = ""
 authors = ["Dorian Beganovic"]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.9.7 "
+python = ">=3.9,<3.10 "
 streamlit = "^1.31.1"
 duckdb = "^0.10.0"
 
