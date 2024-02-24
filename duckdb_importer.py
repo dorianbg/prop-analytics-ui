@@ -43,6 +43,9 @@ if __name__ == "__main__":
     export_to_parquet_query = (
         lambda query, output: f"COPY ({query}) TO '{output}' (ENCRYPTION_CONFIG {encrypt_conf});"
     )
+    export_to_parquet_unencrypted_query = (
+        lambda query, output: f"COPY ( SELECT * FROM ({query}) LIMIT 10) TO '{output}' ;"
+    )
 
     pg_host = "127.0.0.1"
     dbname = "property_cro"
@@ -70,4 +73,16 @@ if __name__ == "__main__":
                 query=prices_query(loc_type="_general_location"),
                 output=px_per_loc_pq_file,
             )
-        )
+        ),
+        conn.execute(
+            export_to_parquet_unencrypted_query(
+                query=prices_query(loc_type="_general_location"),
+                output=px_per_loc_pq_file.replace(".parquet", "_unencrypted.parquet"),
+            )
+        ),
+        conn.execute(
+            export_to_parquet_unencrypted_query(
+                query=prices_query(loc_type=""),
+                output=px_pq_file.replace(".parquet", "_unencrypted.parquet"),
+            )
+        ),

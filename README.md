@@ -1,7 +1,6 @@
 # Property market analytics UI
 
-Streamlit application utilising DuckDB for querying in-memory data (loaded from encrypted parquet files) alongside heavy caching due to the reactive architecture of Streamlit.  
-
+Streamlit application utilising DuckDB for querying in-memory data (loaded from encrypted parquet files) alongside heavy caching due to the reactive architecture of Streamlit.
 
 ### Development
 
@@ -14,6 +13,12 @@ After installing dependencies above, you could run locally with:
 
 With PyCharm you can also utilise the debugger. 
 Just make sure that inside your Run configuration module is set to `streamlit` and script parameters are set to `run app.py`.
+
+### Data
+
+The committed parquet files are encrypted, so you won't be able to re-use the full dataset locally. 
+Instead us the `*_unencrypted.parquet` files to get a high level sense of the data.
+
 
 ### Screenshots 
 
