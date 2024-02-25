@@ -376,14 +376,18 @@ def main():
                             "Municipality": loc,
                             "Start price": f"{first_price:.0f} €/m2",
                             "End price": f"{last_price:.0f} €/m2",
-                            "Change": f"{price_chg_pct:.2f}%",
+                            "Change": price_chg_pct,
                             "Time span": f"{months_delta} months",
-                            "CAGR": f"{cagr * 100:.2f}%",
-                            "Start date": {min_dt.isoformat()},
-                            "End date": {max_dt.isoformat()},
+                            "CAGR": cagr * 100,
+                            "Start date": min_dt,
+                            "End date": max_dt,
                         }
                     )
-                st.dataframe(data=pd.DataFrame(data), hide_index=True)
+                df = pd.DataFrame(data)
+                styled_df = df.style.format(
+                    subset=["Change", "CAGR"], formatter="{:.2f}%"
+                )
+                st.dataframe(data=styled_df, hide_index=True)
 
 
 st.title("Property analytics for Zagreb, Croatia")
