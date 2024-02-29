@@ -11,8 +11,8 @@ Consider setting up `pyenv` and `poetry` as per this [article](https://dorianbg.
 After installing dependencies above, you could run locally with:  
 ```python -m streamlit run app.py``` . 
 
-With PyCharm you can also utilise the debugger. 
-Just make sure that inside your Run configuration module is set to `streamlit` and script parameters are set to `run app.py`.
+With PyCharm (or IntelliJ Idea) you can also utilise the debugger.
+Just make sure that inside your `Run configuration` module is set to `streamlit` and script parameters are set to `run app.py`.
 
 ### Data
 

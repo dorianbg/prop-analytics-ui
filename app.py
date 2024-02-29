@@ -391,6 +391,20 @@ def main():
 
 
 st.title("Property analytics for Zagreb, Croatia")
+st.markdown(
+    """
+        <style>
+               .block-container {
+                    padding-top: 3rem;
+                    padding-bottom: 1rem;
+                    padding-left: 5rem;
+                    padding-right: 5rem;
+                }
+        </style>
+        """,
+    unsafe_allow_html=True,
+)
+
 st.write(
     "Average price per square meter for buying apartments and houses, alongside the average rents per square meter for apartments, all presented in euros, encompassing only the property market of Zagreb, Croatia."
 )
