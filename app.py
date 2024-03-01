@@ -397,8 +397,6 @@ st.markdown(
                .block-container {
                     padding-top: 3rem;
                     padding-bottom: 1rem;
-                    padding-left: 5rem;
-                    padding-right: 5rem;
                 }
         </style>
         """,
